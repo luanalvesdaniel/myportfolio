@@ -1,21 +1,55 @@
 
-<!DOCTYPE html><html lang="pt-br"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artigos</title>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Articles — Luan Daniel</title>
 <link rel="stylesheet" href="styles.css">
-</head><body>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">Sobre</a>
-<a href="projects.html">Projetos</a>
-<a href="articles.html">Artigos</a>
-</nav>
-<section>
-<h2>Artigos</h2>
-<ul>
-<li><a href="#">Como estruturar automações Playwright com POM</a></li>
-<li><a href="#">Validação API + Banco em CI/CD</a></li>
-<li><a href="#">Guia JMeter para iniciantes</a></li>
-</ul>
-</section>
-</body></html>
+</head>
+<body>
+<header class="topbar">
+  <div class="container">
+    <h1 class="brand">Articles</h1>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="articles.html">Articles</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <article>
+    <h2>Como eu estruturo automações Playwright nível Sênior</h2>
+    <p>Resumo: neste artigo descrevo minha estrutura de projeto com Page Objects, fixtures, configurações para CI e práticas de debugging e relatórios.</p>
+    <p><strong>Estrutura sugerida:</strong></p>
+    <ul>
+      <li>tests/</li>
+      <li>tests/pages/</li>
+      <li>tests/specs/</li>
+      <li>playwright.config.js</li>
+      <li>package.json</li>
+    </ul>
+    <p>Posso expandir este artigo com exemplos completos e scripts de CI.</p>
+  </article>
+
+  <article>
+    <h2>Validando API + Banco no CI/CD</h2>
+    <p>Resumo: práticas para integrar chamadas API com validação direta em banco de dados em pipelines (Azure DevOps / GitHub Actions).</p>
+  </article>
+
+  <article>
+    <h2>Guia JMeter para QAs</h2>
+    <p>Resumo: como montar um plano de teste, parametrizar, coletar métricas e interpretar percentis.</p>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>Voltar: <a href="index.html">Home</a></p>
+  </div>
+</footer>
+</body>
+</html>

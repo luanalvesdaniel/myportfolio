@@ -1,21 +1,84 @@
 
-<!DOCTYPE html><html lang="pt-br"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projetos</title>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Projects — Luan Daniel</title>
 <link rel="stylesheet" href="styles.css">
-</head><body>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">Sobre</a>
-<a href="projects.html">Projetos</a>
-<a href="articles.html">Artigos</a>
-</nav>
-<section>
-<h2>Projetos Técnicos</h2>
-<ul>
-<li><a href="#">Automação Front-end com Playwright</a></li>
-<li><a href="#">Testes de API com JavaScript</a></li>
-<li><a href="#">Performance Testing com JMeter</a></li>
-</ul>
-</section>
-</body></html>
+</head>
+<body>
+<header class="topbar">
+  <div class="container">
+    <h1 class="brand">Projects</h1>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="articles.html">Articles</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section>
+    <h2>Playwright — JavaScript (POM)</h2>
+    <p>Exemplo mínimo de estrutura e teste.</p>
+    <pre><code>// samples/playwright/example.spec.js
+const { test, expect } = require('@playwright/test');
+const LoginPage = require('./pages/login.page');
+
+test('Deve logar com credenciais válidas', async ({ page }) => {
+  const login = new LoginPage(page);
+  await login.goto();
+  await login.login('user@example.com','senha123');
+  await expect(page).toHaveURL(/dashboard/);
+});</code></pre>
+    <p><a href="samples/playwright/example.spec.js" download>Download example.spec.js</a></p>
+  </section>
+
+  <section>
+    <h2>Cypress — JavaScript</h2>
+    <p>Exemplo de teste Cypress simples.</p>
+    <pre><code>// samples/cypress/specs/login.cy.js
+describe('Login flow', () => {
+  it('logs in successfully', () => {
+    cy.visit('https://example.com/login');
+    cy.get('[data-test=email]').type('user@example.com');
+    cy.get('[data-test=password]').type('senha123');
+    cy.get('[data-test=submit]').click();
+    cy.url().should('include', '/dashboard');
+  });
+});</code></pre>
+    <p><a href="samples/cypress/specs/login.cy.js" download>Download login.cy.js</a></p>
+  </section>
+
+  <section>
+    <h2>API Testing — JavaScript & Java</h2>
+    <p>Exemplo com supertest (Node.js) e esboço Rest-Assured (Java).</p>
+    <pre><code>// samples/api/supertest.test.js
+const request = require('supertest');
+const api = request('https://api.example.com');
+
+test('GET /status returns 200', async () => {
+  const res = await api.get('/status').set('Accept','application/json');
+  expect(res.status).toBe(200);
+  expect(res.body).toHaveProperty('status','ok');
+});</code></pre>
+    <p><a href="samples/api/supertest.test.js" download>Download supertest.test.js</a></p>
+  </section>
+
+  <section>
+    <h2>Performance — JMeter</h2>
+    <p>Incluí um arquivo JMX básico pronto para executar um teste de carga.</p>
+    <p><a href="samples/jmeter/basic_test.jmx" download>Download basic_test.jmx</a></p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>Voltar: <a href="index.html">Home</a></p>
+  </div>
+</footer>
+</body>
+</html>
